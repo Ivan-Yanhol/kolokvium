@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Колоквіум з дискретної математики: розрахунок шести завдань і відповіді для варіантів 1–100.">
+  <title>Колоквіум — 6 завдань за варіантом</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="page-head">
+      <div>
+        <p class="eyebrow">Дискретна математика · локальний тренажер</p>
+        <h1>Колоквіум: мої 6 завдань</h1>
+        <p class="subline">Введи число від 1 до 100. Усі 6 завдань і відповіді — для GitHub Pages і локального запуску.</p>
+      </div>
+      <span class="status">● ОФЛАЙН · ВЕРСІЯ 4</span>
+    </header>
+
+    <section class="panel form-panel" aria-label="Налаштування колоквіуму">
+      <div class="inputline">
+        <div class="field">
+          <label for="variant">Номер варіанта</label>
+          <input id="variant" type="number" min="1" max="100" step="1" inputmode="numeric" value="56" autocomplete="off">
+          <span id="error" class="error" role="alert"></span>
+        </div>
+        <div class="formula">
+          <strong>Формули викладача:</strong>
+          <span>Nivel 1: k mod* 23; (k+12) mod* 23</span>
+          <span>Nivel 2: k mod* 9; (k+5) mod* 9</span>
+          <span>Nivel 3: k mod* 7; Nivel 4: k mod* 4</span>
+          <small>Якщо звичайний залишок дорівнює нулю, mod* повертає дільник.</small>
+        </div>
+      </div>
+      <div class="toolbar">
+        <button id="calculate" class="button primary" type="button">Показати завдання</button>
+        <div class="segmented" aria-label="Режим показу відповідей">
+          <button id="auto-mode" type="button" class="is-active" aria-pressed="true">За рівнями</button>
+          <button id="short-mode" type="button" aria-pressed="false">Усе коротко</button>
+          <button id="full-mode" type="button" aria-pressed="false">Усе повністю</button>
+        </div>
+        <button id="copy" class="button" type="button">Копіювати</button>
+        <button id="print" class="button" type="button">Друк</button>
+      </div>
+      <p id="mode-help" class="mode-help">За викладачем: Nivel 1 — коротке означення або сформульована властивість (формула лише за потреби); Nivel 2 — приклади; Nivel 3–4 — повне доведення.</p>
+      <div class="toolbar secondary-toolbar">
+        <button id="edit" class="button" type="button" aria-pressed="false">Редагувати відповіді</button>
+        <button id="export" class="button" type="button">Експорт змін (JSON)</button>
+        <button id="import" class="button" type="button">Імпорт змін (JSON)</button>
+        <input id="import-file" type="file" accept=".json,application/json" hidden>
+        <button id="reset" class="button quiet" type="button">Скасувати мої зміни</button>
+      </div>
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="summary" class="panel" aria-label="Результат обчислення"></section>
+    <section id="questions" aria-label="Умови та відповіді"></section>
+    <p class="bottom-note">Питання взято зі списку викладача. Оновлено Nivel 2 №6, Nivel 3 №3 та №4. Відповіді перефразовано за його конспектом: у Nivel 1 — означення або формулювання, а не обов’язково дві частини «слова + формула». Доведення варто додатково звірити з вимогами викладача. Можна змінювати відповіді кнопкою «Редагувати відповіді» та експортувати правки в JSON. Зміни зберігаються тільки у браузері цього пристрою; для зміни відповідей для всіх відвідувачів треба оновити questions.js на GitHub.</p>
+  </main>
+  <noscript><p class="noscript">Для роботи увімкни JavaScript у браузері.</p></noscript>
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
